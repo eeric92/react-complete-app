@@ -1,7 +1,7 @@
 import './ExpenseForm.css';
 import {useState} from "react";
 
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
     /*
         - Option 1
      */
@@ -49,7 +49,8 @@ const ExpenseForm = () => {
             date: new Date(enteredDate)
         };
 
-        console.log(expenseData)
+        // Child to Parent
+        props.onSaveExpenseData(expenseData);
 
         setEnteredTitle("")
         setEnteredAmount("")
